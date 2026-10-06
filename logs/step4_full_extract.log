@@ -1,0 +1,81 @@
+pilot files 794, 18.09 GB; split counts {'train': 555, 'test': 120, 'val': 119}
+[10/794] 2391807 de_dust2 cached rows=0 {} elapsed=0s
+[20/794] 2391827 de_ancient cached rows=0 {} elapsed=0s
+[30/794] 2391938 de_overpass cached rows=0 {} elapsed=0s
+[40/794] 2391946 de_dust2 ok rows=1181717 {'first_tick_eq_freeze_end': 1.0} elapsed=18s
+[50/794] 2391951 de_nuke ok rows=831598 {'first_tick_eq_freeze_end': 1.0} elapsed=29s
+[60/794] 2392064 de_dust2 cached rows=0 {} elapsed=33s
+[70/794] 2392131 de_inferno cached rows=0 {} elapsed=41s
+[80/794] 2392065 de_mirage ok rows=875326 {'first_tick_eq_freeze_end': 1.0} elapsed=47s
+[90/794] 2392152 de_mirage ok rows=829136 {'first_tick_eq_freeze_end': 1.0} elapsed=51s
+[100/794] 2392201 de_inferno ok rows=1052116 {'first_tick_eq_freeze_end': 1.0} elapsed=63s
+[110/794] 2392206 de_mirage ok rows=968573 {'first_tick_eq_freeze_end': 1.0} elapsed=68s
+[120/794] 2392261 de_dust2 ok rows=468899 {'first_tick_eq_freeze_end': 1.0} elapsed=80s
+[130/794] 2392213 de_ancient ok rows=1720427 {'first_tick_eq_freeze_end': 1.0} elapsed=91s
+[140/794] 2392281 de_overpass cached rows=0 {} elapsed=96s
+[150/794] 2392290 de_ancient cached rows=0 {} elapsed=107s
+[160/794] 2392298 de_dust2 cached rows=0 {} elapsed=115s
+[170/794] 2392296 de_overpass ok rows=907042 {'first_tick_eq_freeze_end': 1.0} elapsed=119s
+[180/794] 2392334 de_nuke cached rows=0 {} elapsed=124s
+[190/794] 2392300 de_mirage ok rows=1053817 {'first_tick_eq_freeze_end': 1.0} elapsed=128s
+[200/794] 2392387 de_dust2 cached rows=0 {} elapsed=138s
+[210/794] 2392413 de_nuke cached rows=0 {} elapsed=143s
+[220/794] 2392458 de_ancient cached rows=0 {} elapsed=154s
+[230/794] 2392445 de_anubis ok rows=982731 {'first_tick_eq_freeze_end': 1.0} elapsed=160s
+[240/794] 2392490 de_anubis cached rows=0 {} elapsed=169s
+[250/794] 2392547 de_dust2 cached rows=0 {} elapsed=175s
+[260/794] 2392561 de_overpass cached rows=0 {} elapsed=176s
+[270/794] 2392588 de_dust2 cached rows=0 {} elapsed=186s
+[280/794] 2392593 de_inferno cached rows=0 {} elapsed=195s
+[290/794] 2392594 de_ancient ok rows=440295 {'first_tick_eq_freeze_end': 1.0} elapsed=203s
+[300/794] 2392606 de_overpass cached rows=0 {} elapsed=203s
+[310/794] 2392614 de_overpass cached rows=0 {} elapsed=203s
+[320/794] 2392620 de_dust2 ok rows=1030949 {'first_tick_eq_freeze_end': 1.0} elapsed=213s
+[330/794] 2392655 de_dust2 ok rows=682739 {'first_tick_eq_freeze_end': 1.0} elapsed=225s
+[340/794] 2392665 de_nuke cached rows=0 {} elapsed=230s
+[350/794] 2392660 de_nuke ok rows=1004557 {'first_tick_eq_freeze_end': 1.0} elapsed=234s
+[360/794] 2392709 de_dust2 cached rows=0 {} elapsed=241s
+[370/794] 2392704 de_nuke ok rows=951347 {'first_tick_eq_freeze_end': 1.0} elapsed=248s
+[380/794] 2392716 de_ancient ok rows=689887 {'first_tick_eq_freeze_end': 1.0} elapsed=252s
+[390/794] 2392739 de_overpass cached rows=0 {} elapsed=256s
+[400/794] 2392747 de_nuke cached rows=0 {} elapsed=266s
+[410/794] 2392763 de_ancient cached rows=0 {} elapsed=271s
+[420/794] 2392753 de_ancient ok rows=654353 {'first_tick_eq_freeze_end': 1.0} elapsed=274s
+[430/794] 2392784 de_mirage cached rows=0 {} elapsed=280s
+[440/794] 2392797 de_ancient cached rows=0 {} elapsed=284s
+[450/794] 2392811 de_mirage cached rows=0 {} elapsed=290s
+[460/794] 2392827 de_nuke cached rows=0 {} elapsed=296s
+[470/794] 2392843 de_nuke cached rows=0 {} elapsed=303s
+[480/794] 2392900 de_inferno cached rows=0 {} elapsed=309s
+[490/794] 2392911 de_inferno cached rows=0 {} elapsed=312s
+[500/794] 2392906 de_inferno ok rows=738329 {'first_tick_eq_freeze_end': 1.0} elapsed=319s
+[510/794] 2392928 de_dust2 ok rows=948800 {'first_tick_eq_freeze_end': 1.0} elapsed=323s
+[520/794] 2392936 de_nuke ok rows=1302587 {'first_tick_eq_freeze_end': 1.0} elapsed=334s
+[530/794] 2392983 de_ancient cached rows=0 {} elapsed=336s
+[540/794] 2393007 de_ancient cached rows=0 {} elapsed=342s
+[550/794] 2393000 de_mirage ok rows=579524 {'first_tick_eq_freeze_end': 1.0} elapsed=350s
+[560/794] 2393028 de_dust2 cached rows=0 {} elapsed=355s
+[570/794] 2393040 de_inferno cached rows=0 {} elapsed=361s
+[580/794] 2393042 de_ancient ok rows=1141117 {'first_tick_eq_freeze_end': 1.0} elapsed=373s
+[590/794] 2393057 de_ancient ok rows=425846 {'first_tick_eq_freeze_end': 1.0} elapsed=377s
+[600/794] 2393084 de_ancient cached rows=0 {} elapsed=386s
+[610/794] 2393075 de_inferno ok rows=484327 {'first_tick_eq_freeze_end': 1.0} elapsed=391s
+[620/794] 2393085 de_mirage ok rows=813893 {'first_tick_eq_freeze_end': 1.0} elapsed=396s
+[630/794] 2393128 de_ancient cached rows=0 {} elapsed=400s
+[640/794] 2393142 de_mirage cached rows=0 {} elapsed=404s
+[650/794] 2393133 de_nuke ok rows=579331 {'first_tick_eq_freeze_end': 1.0} elapsed=411s
+[660/794] 2393159 de_nuke ok rows=846573 {'first_tick_eq_freeze_end': 1.0} elapsed=416s
+[670/794] 2393166 de_nuke ok rows=627452 {'first_tick_eq_freeze_end': 1.0} elapsed=419s
+[680/794] 2393223 de_nuke cached rows=0 {} elapsed=427s
+[690/794] 2393232 de_ancient cached rows=0 {} elapsed=429s
+[700/794] 2393237 de_mirage cached rows=0 {} elapsed=434s
+[710/794] 2393242 de_mirage cached rows=0 {} elapsed=434s
+[720/794] 2393243 de_ancient ok rows=926577 {'first_tick_eq_freeze_end': 1.0} elapsed=448s
+[730/794] 2393252 de_anubis ok rows=661443 {'first_tick_eq_freeze_end': 1.0} elapsed=454s
+[740/794] 2393272 de_anubis cached rows=0 {} elapsed=458s
+[750/794] 2393262 de_overpass ok rows=999493 {'first_tick_eq_freeze_end': 1.0} elapsed=463s
+[760/794] 2393338 de_anubis cached rows=0 {} elapsed=469s
+[770/794] 2393397 de_nuke cached rows=0 {} elapsed=476s
+[780/794] 2393399 de_anubis ok rows=1006148 {'first_tick_eq_freeze_end': 1.0} elapsed=484s
+[790/794] 2393408 de_mirage ok rows=527213 {'first_tick_eq_freeze_end': 1.0} elapsed=494s
+DONE 794 failed [] 500s

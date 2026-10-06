@@ -1,0 +1,31 @@
+cd ~/Desktop/Additional/CS2
+
+cat > .gitignore <<'EOF'
+# Dataset — do not upload
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+EOF

@@ -1,0 +1,5 @@
+T_s,future_kills_corrupted,future_plants_shifted,future_snapshot_rows_scrambled,features_unchanged,n_changed_cols,changed
+10,111015,8533,1272652,True,0,
+30,84975,8108,678409,True,0,
+60,46883,5012,131154,True,0,
+90,17030,2114,29030,True,0,
