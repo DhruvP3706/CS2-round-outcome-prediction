@@ -1,0 +1,102 @@
+{
+  "DOI": "10.1109/icsadl61749.2024.00035",
+  "title": [
+    "A Real Time Prediction Model for Round Winners of Counter Strike:Global Offensive"
+  ],
+  "author": [
+    {
+      "given": "Rosebell",
+      "family": "Paul",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "SCMS School of Engineering and Technology,Department of Computer Science and Engineering)"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Rihan",
+      "family": "Sajeer",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "SCMS School of Engineering and Technology,Department of Computer Science and Engineering)"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Vaishnav",
+      "family": "M.V",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "SCMS School of Engineering and Technology,Department of Computer Science and Engineering)"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Savio Vinu",
+      "family": "Abraham",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "SCMS School of Engineering and Technology,Department of Computer Science and Engineering)"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Shreya",
+      "family": "Sahajan",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "SCMS School of Engineering and Technology,Department of Computer Science and Engineering)"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "container-title": [
+    "2024 3rd International Conference on Sentiment Analysis and Deep Learning (ICSADL)"
+  ],
+  "published": {
+    "date-parts": [
+      [
+        2024,
+        3,
+        13
+      ]
+    ]
+  },
+  "abstract": null,
+  "URL": "https://doi.org/10.1109/icsadl61749.2024.00035"
+}

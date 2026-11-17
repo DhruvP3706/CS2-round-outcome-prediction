@@ -6,7 +6,7 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from research_experiment import ROOT, ROUND_KEY, LABEL_COL, score
+from research_experiment import ROOT, ROUND_KEY, LABEL_COL, TIMES, MODELS, score
 
 def table(out,name,d):
     d.to_csv(out/f'{name}.csv',index=False)
@@ -49,6 +49,11 @@ def savefig(out,name):
     plt.close()
 
 def report(out):
+    expected={f'{m}__baseline__{t}__42' for m in ['original_baseline','convex_ensemble','lstm','gru','tcn']+MODELS for t in TIMES}
+    expected|={f'lightgbm__{f}__{t}__42' for f in ['metadata','state','geometry','temporal_spatial','combined','without_combat'] for t in TIMES}
+    expected|={f'lightgbm__{f}__{t}__{seed}' for f in ['baseline','combined'] for t in [30,40,50,60,75] for seed in [1,2]}
+    missing=expected-{p.stem for p in (out/'checkpoints').glob('*.json')}
+    if missing: raise RuntimeError(f'Incomplete experiment: {len(missing)} missing runs, e.g. {sorted(missing)[:5]}')
     records=[]
     for p in sorted((out/'checkpoints').glob('*.json')): records.extend(json.loads(p.read_text())['metrics'])
     allm=pd.DataFrame(records); table(out,'all_metrics',allm)
@@ -60,10 +65,17 @@ def report(out):
     # Frozen per-time model and feature choice based exclusively on validation.
     best=test.sort_values(['t_s','macro_f1_validation','model','feature_set'],ascending=[True,False,True,True]).groupby('t_s').head(1)
     table(out,'best_model_by_time',best)
-    old=pd.read_csv(ROOT/'results/step6/baseline_reproduction.csv')
-    reproduced=test[test.model=='original_baseline'][['t_s','macro_f1','n']].merge(old[['t_s','test_macro_f1','n_test']],on='t_s')
-    reproduced['difference']=reproduced.macro_f1-reproduced.test_macro_f1
-    table(out,'baseline_reproduction',reproduced)
+    if out.name=='main_experiment':
+        old=pd.read_csv(ROOT/'results/step6/baseline_reproduction.csv')
+        reproduced=test[test.model=='original_baseline'][['t_s','macro_f1','n']].merge(old[['t_s','test_macro_f1','n_test']],on='t_s')
+        reproduced['difference']=reproduced.macro_f1-reproduced.test_macro_f1
+        table(out,'baseline_reproduction',reproduced)
+    diagnostic=[]
+    for metric in ['accuracy','macro_f1']:
+        z=test.sort_values(metric,ascending=False).groupby('t_s').head(1).copy()
+        z['diagnostic_test_maximum_only']=metric
+        diagnostic.append(z)
+    table(out,'descriptive_test_maxima_not_model_selection',pd.concat(diagnostic))
     for metric in ['accuracy','macro_f1']:
         table(out,f'test_{metric}_by_time',test[['model','feature_set','t_s',metric,'n','coverage']])
     abb=test[test.model=='lightgbm'].copy()
@@ -130,6 +142,8 @@ def report(out):
                 top=importance.nlargest(20,metric).sort_values(metric)
                 plt.figure(figsize=(9,7)); plt.barh(top.feature,top[metric]); plt.xlabel(metric+' (validation)'); savefig(out,f'{metric}_{t}')
     mapdf=pd.DataFrame(maps).query("model=='lightgbm' and feature_set=='baseline'")
+    matrix=pd.DataFrame(maps).query("t_s==60 and feature_set=='baseline'").pivot(index='map_name',columns='model',values='macro_f1')
+    plt.figure(figsize=(12,5)); plt.imshow(matrix,aspect='auto'); plt.xticks(range(len(matrix.columns)),matrix.columns,rotation=60,ha='right'); plt.yticks(range(len(matrix)),matrix.index); plt.colorbar(label='Test Macro F1 at 60s'); savefig(out,'map_model_comparison')
     for metric in ['macro_f1','accuracy','n','ct_count']:
         p=mapdf.pivot(index='map_name',columns='t_s',values=metric)
         plt.figure(figsize=(10,5)); plt.imshow(p,aspect='auto'); plt.xticks(range(len(p.columns)),p.columns); plt.yticks(range(len(p)),p.index)

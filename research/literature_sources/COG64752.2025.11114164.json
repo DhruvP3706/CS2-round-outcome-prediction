@@ -1,0 +1,70 @@
+{
+  "DOI": "10.1109/cog64752.2025.11114164",
+  "title": [
+    "Precision Under Fire: Analysis and Predictive Modeling in Counter-Strike: Global Offensive"
+  ],
+  "author": [
+    {
+      "given": "Xinyao",
+      "family": "Xia",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "USC Information Sciences Institute,Marina del Rey,California,USA"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Abel",
+      "family": "Salinas",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "USC Information Sciences Institute,Marina del Rey,California,USA"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    },
+    {
+      "given": "Fred",
+      "family": "Morstatter",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "USC Information Sciences Institute,Marina del Rey,California,USA"
+        }
+      ],
+      "role": [
+        {
+          "vocabulary": "crossref",
+          "role": "author"
+        }
+      ]
+    }
+  ],
+  "container-title": [
+    "2025 IEEE Conference on Games (CoG)"
+  ],
+  "published": {
+    "date-parts": [
+      [
+        2025,
+        8,
+        26
+      ]
+    ]
+  },
+  "abstract": null,
+  "URL": "https://doi.org/10.1109/cog64752.2025.11114164"
+}

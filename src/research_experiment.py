@@ -99,7 +99,9 @@ def prepare(out):
     manifest.to_csv(out/'split_manifest.csv',index=False)
     summary=manifest.groupby('split').agg(series=('match_id','nunique'),maps=('map_id','nunique'),rounds=('round','size'),ct=(LABEL_COL,'sum'))
     summary['t']=summary['rounds']-summary.ct
-    (out/'split_report.md').write_text('# Grouped split\n\n'+summary.to_string()+'\n\nSeries = match_id; maps nested within series. Seed 42. All models retain the metadata eligibility cohort; unavailable snapshots are imputed using training data only.\n\n'+manifest.groupby(['split','map_name']).size().to_string(),encoding='utf-8')
+    eligibility=manifest.groupby('split')[[f'eligible_{t}s' for t in TIMES]].sum()
+    eligibility.to_csv(out/'eligibility_by_split.csv')
+    (out/'split_report.md').write_text('# Grouped split\n\n'+summary.to_string()+'\n\nSeries = match_id; maps nested within series. Seed 42. All models retain the metadata eligibility cohort; unavailable snapshots are imputed using training data only.\n\n'+manifest.groupby(['split','map_name']).size().to_string()+'\n\nEligible rounds by cutoff:\n\n'+eligibility.to_string(),encoding='utf-8')
     write_json(out/'feature_sets.json',families)
     for c in families['combined']:
         if not pd.api.types.is_numeric_dtype(d[c]): raise TypeError(c)
@@ -221,6 +223,8 @@ def main():
         from research_temporal import run
         run(out,rounds,d,families,args.times)
     if args.stage=='all':
+        from research_ensemble import run as ensemble
+        ensemble(out)
         from research_report import report
         report(out)
 

@@ -17,6 +17,11 @@ class ResearchTests(unittest.TestCase):
     def test_threshold_tie(self):
         self.assertEqual(threshold([0,1],[.1,.9])[0],.5)
 
+    def test_macro_matches_sklearn(self):
+        from sklearn.metrics import f1_score
+        rng=np.random.default_rng(7); y=rng.integers(2,size=100); p=rng.random(100)
+        self.assertAlmostEqual(score(y,p)['macro_f1'],f1_score(y,p>=.5,labels=[0,1],average='macro'))
+
     def test_split_stable_under_row_permutation(self):
         d=pd.DataFrame({'match_id':np.repeat(np.arange(40),3)})
         pd.testing.assert_series_equal(series_split(d),series_split(d.sample(frac=1,random_state=3)))

@@ -1,0 +1,70 @@
+{
+  "DOI": "10.1109/icsp54964.2022.9778597",
+  "title": [
+    "Predicting Round Result in Counter-Strike: Global Offensive Using Machine Learning"
+  ],
+  "author": [
+    {
+      "given": "Weison",
+      "family": "Xu Huang",
+      "sequence": "first",
+      "affiliation": [
+        {
+          "name": "Cincinnati Country Day School,Cincinnati,Ohio,United States"
+        }
+      ],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Jincheng",
+      "family": "Wang",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "AP Center,Hangzhou 14th High School,Hangzhou,China"
+        }
+      ],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    },
+    {
+      "given": "Yizhi",
+      "family": "Xu",
+      "sequence": "additional",
+      "affiliation": [
+        {
+          "name": "Olive Tree International Academy,BFSU,Hangzhou,China"
+        }
+      ],
+      "role": [
+        {
+          "role": "author",
+          "vocabulary": "crossref"
+        }
+      ]
+    }
+  ],
+  "container-title": [
+    "2022 7th International Conference on Intelligent Computing and Signal Processing (ICSP)"
+  ],
+  "published": {
+    "date-parts": [
+      [
+        2022,
+        4,
+        15
+      ]
+    ]
+  },
+  "abstract": null,
+  "URL": "https://doi.org/10.1109/icsp54964.2022.9778597"
+}
