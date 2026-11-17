@@ -1,6 +1,3 @@
-cd ~/Desktop/Additional/CS2
-
-cat > .gitignore <<'EOF'
 # Dataset — do not upload
 data/
 
@@ -8,6 +5,7 @@ data/
 __pycache__/
 *.py[cod]
 *.so
+catboost_info/
 
 # Virtual environments
 .venv/
@@ -28,4 +26,3 @@ Thumbs.db
 *.temp
 *.swp
 *.swo
-EOF

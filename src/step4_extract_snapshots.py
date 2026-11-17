@@ -133,7 +133,7 @@ if __name__ == "__main__":
     if limit:
         jobs = jobs[:limit]
     t0, done, bad = time.time(), 0, []
-    with Pool(8, initializer=_init, initargs=(table,)) as pool:
+    with Pool(12, initializer=_init, initargs=(table,)) as pool:
         for mid, mp, st, n, info in pool.imap_unordered(process, jobs):
             done += 1
             if st.startswith("FAILED"):
