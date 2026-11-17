@@ -1,0 +1,15 @@
+model,selection_protocol,status
+logistic_regression,validation Macro F1,present
+decision_tree,validation Macro F1,present
+random_forest,validation Macro F1,present
+extra_trees,validation Macro F1,present
+gradient_boosting,validation Macro F1,present
+hist_gradient_boosting,validation Macro F1,present
+xgboost,validation Macro F1,present
+lightgbm,validation Macro F1,present
+catboost,validation Macro F1,present
+linear_svm,validation Macro F1,present
+knn,validation Macro F1,present
+gaussian_naive_bayes,validation Macro F1,present
+lstm_gru_causal_cnn,validation loss,present
+transformer,broad search,deferred

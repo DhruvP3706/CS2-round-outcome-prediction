@@ -1,0 +1,17 @@
+,,absolute_correlation
+ct_kill,t_death,0.9989023464042034
+ct_kill,t_alive,0.9989023464042068
+ct_kill,ps_t_alive,0.9989023250316488
+t_kill,ct_death,0.9995940141102708
+t_kill,ct_alive,0.9995940141102705
+t_kill,ps_ct_alive,0.9995939964379287
+ct_death,ct_alive,0.9999999999999997
+ct_death,ps_ct_alive,0.9999999999999998
+t_death,t_alive,1.0
+t_death,ps_t_alive,0.9999999999999994
+ct_alive,ps_ct_alive,1.0
+t_alive,ps_t_alive,1.0
+alive_diff,kill_diff,0.9984348333980504
+alive_diff,ps_alive_diff,1.0
+kill_diff,ps_alive_diff,0.9984348225378593
+ps_ct_w_heavy,ps_wdiff_heavy,0.9929318578551046

@@ -1,0 +1,12 @@
+{
+  "rounds": 16527,
+  "series": 359,
+  "missing_snapshot_rows": 6,
+  "duplicate_keys": 0,
+  "label_check": "passed",
+  "source_sha256": {
+    "data\\processed\\round_table.parquet": "2fb594b4142856770587b0bc70139a0a865ff8329b88044c7f1a47ebbe991f88",
+    "data\\features\\step2_metadata_features.parquet": "9e194d298330793e8fda89d03b789cc98ae0a1f23cfefe07a50d199df173ca64",
+    "data\\features\\step4_full\\player_state_features.parquet": "486f474bf752ee991a90c0a67d419918fceb514d565febaf17d1bf5ab2e705b9"
+  }
+}

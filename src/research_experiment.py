@@ -30,6 +30,7 @@ from cs2pred.modeling_extended import make_model
 import lightgbm as lgb
 
 ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_OUT = 'results/main_experiment'
 TIMES = [5,10,15,20,25,30,35,40,45,50,60,75]
 MODELS = ['logreg','decision_tree','random_forest','extra_trees','svm','knn','naive_bayes',
           'gradient_boosting','hist_gradient_boosting','xgboost','lightgbm','catboost']
@@ -195,7 +196,7 @@ def run_one(out,rounds,d,families,name,t,family='baseline',seed=42):
 
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--stage',choices=['all','prepare','classical','ablation','temporal','report'],default='all')
-    parser.add_argument('--out',default='results/main_experiment'); parser.add_argument('--times',type=int,nargs='+',default=TIMES)
+    parser.add_argument('--out',default=DEFAULT_OUT); parser.add_argument('--times',type=int,nargs='+',default=TIMES)
     args=parser.parse_args(); out=ROOT/args.out
     for p in [out,*[out/x for x in ['checkpoints','selection','predictions','plots','tables']]]: p.mkdir(parents=True,exist_ok=True)
     if args.stage=='report':

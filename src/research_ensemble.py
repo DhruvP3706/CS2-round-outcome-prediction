@@ -4,7 +4,7 @@ import json
 import time
 import numpy as np
 import pandas as pd
-from research_experiment import ROOT,KEY,LABEL_COL,TIMES,threshold,score,write_json
+from research_experiment import ROOT,KEY,LABEL_COL,TIMES,DEFAULT_OUT,threshold,score,write_json
 
 def run(out):
     models=['lightgbm','catboost','gradient_boosting']
@@ -37,4 +37,4 @@ def run(out):
         print('ENSEMBLE',t,flush=True)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(); p.add_argument('--out',default='results/main_experiment'); args=p.parse_args(); run(ROOT/args.out)
+    p=argparse.ArgumentParser(); p.add_argument('--out',default=DEFAULT_OUT); args=p.parse_args(); run(ROOT/args.out)

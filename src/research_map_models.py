@@ -1,11 +1,11 @@
 """Map-specific versus pooled LightGBM; fixed cutoffs and validation tuning."""
 import argparse
 import pandas as pd
-from research_experiment import ROOT,prepare,run_one
+from research_experiment import ROOT,DEFAULT_OUT,prepare,run_one
 from research_report import table
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--out',default='results/main_experiment'); args=p.parse_args()
+    p=argparse.ArgumentParser(); p.add_argument('--out',default=DEFAULT_OUT); args=p.parse_args()
     out=ROOT/args.out; rounds,d,families=prepare(out); rows=[]
     for mp in sorted(d.map_name.unique()):
         child=out/'map_specific'/mp

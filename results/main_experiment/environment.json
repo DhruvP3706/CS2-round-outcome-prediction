@@ -1,0 +1,14 @@
+{
+  "python": "3.13.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu_count": 20,
+  "packages": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.2",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "xgboost": "3.4.1",
+    "catboost": "1.2.10",
+    "torch": "2.15.0"
+  }
+}

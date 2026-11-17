@@ -1,0 +1,4 @@
+split,matches,rounds,ct_wins,t_wins,maps
+train,251,11576,5939,5637,7
+validation,54,2448,1236,1212,7
+test,54,2503,1260,1243,7

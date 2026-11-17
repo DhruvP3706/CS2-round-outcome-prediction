@@ -1,0 +1,8 @@
+{
+  "runs_verified": 296,
+  "split_isolation": "passed",
+  "cohort_equality": "passed",
+  "labels": "passed",
+  "validation_threshold_recalculation": "passed",
+  "sklearn_accuracy_and_macro_f1": "passed"
+}

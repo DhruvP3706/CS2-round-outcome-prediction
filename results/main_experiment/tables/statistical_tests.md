@@ -1,0 +1,14 @@
+| baseline | proposed_model | feature_set | t_s | difference | ci_low | ci_high | p_value | n_series | corrected_p_value |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| original_baseline | hist_gradient_boosting | baseline | 5 | -0.00083 | -0.00988 | 0.00800 | 0.83263 | 54 | 1.00000 |
+| original_baseline | convex_ensemble | baseline | 10 | 0.00375 | -0.00538 | 0.01348 | 0.43071 | 54 | 1.00000 |
+| original_baseline | convex_ensemble | baseline | 15 | -0.00331 | -0.01153 | 0.00388 | 0.36893 | 54 | 1.00000 |
+| original_baseline | catboost | baseline | 20 | -0.00237 | -0.00958 | 0.00478 | 0.55569 | 54 | 1.00000 |
+| original_baseline | convex_ensemble | baseline | 25 | 0.00014 | -0.00637 | 0.00707 | 0.91162 | 54 | 1.00000 |
+| original_baseline | catboost | baseline | 30 | -0.00360 | -0.01311 | 0.00572 | 0.44751 | 54 | 1.00000 |
+| original_baseline | original_baseline | baseline | 35 | 0.00000 | 0.00000 | 0.00000 | 1.00000 | 54 | 1.00000 |
+| original_baseline | catboost | baseline | 40 | 0.00084 | -0.00663 | 0.00801 | 0.83503 | 54 | 1.00000 |
+| original_baseline | lightgbm | without_combat | 45 | 0.01082 | 0.00300 | 0.01933 | 0.00700 | 54 | 0.08398 |
+| original_baseline | lightgbm | temporal_spatial | 50 | -0.00007 | -0.00854 | 0.00866 | 0.96921 | 54 | 1.00000 |
+| original_baseline | convex_ensemble | baseline | 60 | 0.00205 | -0.00676 | 0.01018 | 0.62867 | 54 | 1.00000 |
+| original_baseline | convex_ensemble | baseline | 75 | 0.00375 | -0.00321 | 0.01022 | 0.36393 | 54 | 1.00000 |

@@ -1,0 +1,4 @@
+split,ct_wins,t_wins,ct_fraction
+train,5939,5637,0.5128
+validation,1236,1212,0.5049
+test,1260,1243,0.5062

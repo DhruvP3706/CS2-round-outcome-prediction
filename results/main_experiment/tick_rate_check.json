@@ -1,0 +1,8 @@
+{
+  "n_events": 111715,
+  "median_tick_rate": 64.0,
+  "min_tick_rate": 64.0,
+  "max_tick_rate": 64.0,
+  "max_event_seconds_error_at_64": 0.0,
+  "limitation": "event_seconds may itself be derived from ticks; this is timeline consistency, not independent wall-clock verification"
+}

@@ -1,0 +1,83 @@
+{
+  "base_models": [
+    "lightgbm",
+    "catboost",
+    "gradient_boosting"
+  ],
+  "candidates": [
+    {
+      "weights": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "threshold": 0.515,
+      "validation_macro_f1": 0.8044549065764308
+    },
+    {
+      "weights": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "threshold": 0.505,
+      "validation_macro_f1": 0.7996633674955818
+    },
+    {
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "threshold": 0.505,
+      "validation_macro_f1": 0.800109460055907
+    },
+    {
+      "weights": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "threshold": 0.515,
+      "validation_macro_f1": 0.8022365612664508
+    },
+    {
+      "weights": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "threshold": 0.515,
+      "validation_macro_f1": 0.8021396609945902
+    },
+    {
+      "weights": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "threshold": 0.52,
+      "validation_macro_f1": 0.8020883772604157
+    },
+    {
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "threshold": 0.515,
+      "validation_macro_f1": 0.8032516016581872
+    }
+  ],
+  "selected": {
+    "weights": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "threshold": 0.515,
+    "validation_macro_f1": 0.8044549065764308
+  },
+  "seed": 42,
+  "note": "Fixed seven convex combinations; underlying training cost reported separately in base model records"
+}

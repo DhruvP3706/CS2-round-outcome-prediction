@@ -62,6 +62,9 @@ def report(out):
     keys=['model','feature_set','t_s','seed']
     test=test.merge(val[keys+['macro_f1','accuracy']],on=keys,suffixes=('','_validation'))
     table(out,'test_model_comparison',test); table(out,'model_comparison',test); table(out,'test_metrics',test)
+    overall=test.groupby(['model','feature_set']).agg(mean_validation_macro_f1=('macro_f1_validation','mean'),mean_test_macro_f1=('macro_f1','mean'),mean_test_accuracy=('accuracy','mean'),cutoffs=('t_s','nunique')).reset_index()
+    overall=overall[overall.cutoffs==len(TIMES)].sort_values('mean_validation_macro_f1',ascending=False)
+    table(out,'overall_model_comparison',overall)
     # Frozen per-time model and feature choice based exclusively on validation.
     best=test.sort_values(['t_s','macro_f1_validation','model','feature_set'],ascending=[True,False,True,True]).groupby('t_s').head(1)
     table(out,'best_model_by_time',best)
@@ -91,9 +94,11 @@ def report(out):
     eligible=set(map(tuple,manifest.loc[(manifest.split=='test')&manifest.eligible_75s,ROUND_KEY].to_numpy()))
     for r in test.itertuples():
         tag=f'{r.model}__{r.feature_set}__{r.t_s}__42'
-        d=pd.read_csv(out/'predictions'/f'{tag}.csv.gz'); d=d[d.split=='test']; predictions[tag]=d
+        allpred=pd.read_csv(out/'predictions'/f'{tag}.csv.gz'); d=allpred[allpred.split=='test']; predictions[tag]=d
         for mp,grp in d.groupby('map_name'):
-            maps.append(dict(model=r.model,feature_set=r.feature_set,t_s=r.t_s,map_name=mp,**score(grp[LABEL_COL],grp.p_ct,r.threshold)))
+            vmap=allpred[(allpred.split=='val')&(allpred.map_name==mp)]
+            vm=score(vmap[LABEL_COL],vmap.p_ct,r.threshold)['macro_f1'] if len(vmap)>=50 else np.nan
+            maps.append(dict(model=r.model,feature_set=r.feature_set,t_s=r.t_s,map_name=mp,validation_macro_f1=vm,n_validation=len(vmap),**score(grp[LABEL_COL],grp.p_ct,r.threshold)))
         mm=d[[tuple(k) in eligible for k in d[ROUND_KEY].to_numpy()]]
         if len(mm): matched.append(dict(model=r.model,feature_set=r.feature_set,t_s=r.t_s,coverage=len(mm)/total,**score(mm[LABEL_COL],mm.p_ct,r.threshold)))
         cc=counts(d[LABEL_COL].to_numpy(),d.prediction.to_numpy(),d.match_id.to_numpy())
@@ -112,6 +117,9 @@ def report(out):
         if n: stat.loc[good.index,'corrected_p_value']=np.minimum(1,np.maximum.accumulate(good.to_numpy()*(n-np.arange(n))))
     table(out,'statistical_tests',stat); table(out,'confidence_intervals',pd.DataFrame(cis))
     table(out,'map_analysis',pd.DataFrame(maps)); table(out,'matched_cohort',pd.DataFrame(matched))
+    mapbest=pd.DataFrame(maps).dropna(subset=['validation_macro_f1']).sort_values('validation_macro_f1',ascending=False).groupby(['map_name','t_s']).head(1)
+    table(out,'map_best_by_validation',mapbest)
+    table(out,'map_time_best_by_validation',mapbest.sort_values('validation_macro_f1',ascending=False).groupby('map_name').head(1))
     seeds=allm[(allm.split=='test')&(allm.threshold_mode=='validation_selected')]
     sd=seeds.groupby(['model','feature_set','t_s']).macro_f1.agg(['mean','std','count']).reset_index()
     table(out,'seed_summary',sd)

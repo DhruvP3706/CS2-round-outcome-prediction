@@ -1,0 +1,6 @@
+severity,area,discrepancy,impact,corrective_action
+Major,Experiment coverage,Requested 90/105/120 second cutoffs are absent,Later-horizon conclusions cannot be made,Limit claims to executed cutoffs or run the missing horizons
+Major,Holdout experiment,Fifth-sample results are absent on this branch,Experiment B cannot be assessed or merged,Recover the exact branch/data and rerun independently
+Major,Historical reproduction,Original combined tick cache is absent,Bit-for-bit reproduction is unavailable,Report the available-cache diagnostic and preserve provenance
+Minor,Timeline,Snapshot cache lacks complete raw tick provenance,Independent wall-clock validation is limited,Retain source audit and perform raw-tick re-extraction
+Minor,Literature,Some IEEE full texts were inaccessible,Methods and numerical comparisons remain unverified,Do not import their scores; verify from primary text before comparison

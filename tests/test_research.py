@@ -33,6 +33,9 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(f.geo_enemy_distance_min.iloc[0],5)
         self.assertEqual(f.geo_enemy_distance_mean.iloc[0],5)
         self.assertEqual(f.geo_ct_pair_mean.iloc[0],6)
+        future=d.copy(); future['t_s']=10; future['x']=9999
+        augmented=geometry(pd.concat([d,future],ignore_index=True))
+        pd.testing.assert_frame_equal(f,augmented[augmented.prediction_time_s==5].reset_index(drop=True))
         with self.assertRaises(ValueError): geometry(pd.concat([d,d.iloc[:1]]))
 
     def test_future_mutation_invariant(self):

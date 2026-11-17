@@ -1,0 +1,7 @@
+quantity,value
+rounds,16527
+matches,359
+maps,7
+positive_label,CT win (y_ct_win=1)
+prediction_clock,seconds after freeze_end_tick
+tick_conversion,freeze_end_tick + 64 * seconds

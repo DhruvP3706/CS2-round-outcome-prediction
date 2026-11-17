@@ -1,0 +1,8 @@
+family,status,description
+metadata_and_context,used,map/match/round context and prior-round variables
+combat_and_events,used,cutoff-masked causal event counts and bomb state
+player_state,used,alive-player health armor equipment and state snapshots
+geometry,ablation,exact planar cross-team and within-team distances
+occupancy,ablation,observed player occupancy summaries
+temporal_dynamics,ablation,causal movement and short-window changes
+historical_firing_STOM,legacy_only,not pooled because provenance and representation differ
